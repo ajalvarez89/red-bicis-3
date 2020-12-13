@@ -1,0 +1,32 @@
+extends ../layout
+
+block content
+    a(href='/bicicletas') Volver
+
+    br
+    br
+    br
+
+    h1 Actulizando Bicicleta
+
+    br
+    br
+    
+    form(action=`/bicicletas/${bici.id}/update` method="post")
+        label(for="id") ID:
+        input(type="text" name="id" value= bici.id)
+        br
+        label(for="id") Color:
+        input(type="text" name="color" value= bici.color)
+        br
+        label(for="id") Modelo:
+        input(type="text" name="modelo" value = bici.modelo)
+        br
+        label(for="id") Latitud:
+        input(type="text" name="lat" value = bici.ubicacion[0])
+        br
+        label(for="id") Longitud:
+        input(type="text" name="lng" value = bici.ubicacion[1])
+        br
+        br
+        input.btn(type="submit" value="OK")
